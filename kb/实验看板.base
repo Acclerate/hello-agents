@@ -1,0 +1,42 @@
+filters:
+  and:
+    - file.inFolder("kb/实验")
+    - file.ext == "md"
+formulas:
+  badge: icon + " " + type
+properties:
+  chapter:
+    displayName: 章
+  code:
+    displayName: 编号
+  type:
+    displayName: 类型
+  dir:
+    displayName: 源码目录
+  status:
+    displayName: 状态
+views:
+  - type: table
+    name: 按章分组
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - formula.badge
+      - status
+      - dir
+  - type: table
+    name: 按状态分组
+    groupBy:
+      property: icon
+      direction: ASC
+    order:
+      - file.name
+      - chapter
+      - dir
+  - type: cards
+    name: 卡片总览
+    order:
+      - file.name
+      - formula.badge

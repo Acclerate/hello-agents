@@ -1,0 +1,470 @@
+# Hello-Agents 知识库 · 实验索引清单
+# 被 scripts/gen_kb_index.py 消费，生成 kb/实验/ 下的索引卡（幂等，可重跑）。
+# 字段说明：
+#   chapter     章号（1-16）
+#   title/doc   章节短标题 / docs 正文文件名（不含 .md）
+#   icon        ✅ 已跑通 / 📖 待复现（章级默认，实验可覆盖）
+#   experiments/projects:
+#     code       编号，如 "4-1"
+#     name       实验名（笔记名 = "实验 4-1 · <name>"）
+#     desc       一句话说明
+#     dir        源码目录（相对仓库根，默认 code/chapter<N>）
+#     files      源码文件（相对 dir）；目录以 / 结尾则渲染为代码样式
+#     concepts   相关概念卡（wikilink 目标）
+#     status     未开始/进行中/已完成（默认 未开始）
+#     icon       覆盖章级 icon
+
+chapters:
+  - chapter: 1
+    title: 初识智能体
+    doc: 第一章 初识智能体
+    icon: "✅"
+    experiments:
+      - code: "1-1"
+        name: FirstAgentTest
+        desc: "5 分钟跑通第一个智能体：配置 API 并完成首次调用"
+        files: ["FirstAgentTest.py", "FirstAgentTest.ipynb"]
+        concepts: ["Agent≠Chatbot"]
+        status: 已完成
+
+  - chapter: 2
+    title: 智能体发展史
+    doc: 第二章 智能体发展史
+    icon: "📖"
+    experiments:
+      - code: "2-1"
+        name: ELIZA 规则聊天机器人
+        desc: "复现 1966 年规则对话程序，体验前 LLM 时代'智能体'"
+        files: ["ELIZA.py"]
+        concepts: ["Agent≠Chatbot"]
+
+  - chapter: 3
+    title: 大语言模型基础
+    doc: 第三章 大语言模型基础
+    icon: "📖"
+    experiments:
+      - code: "3-1"
+        name: N-gram 语言模型
+        desc: "统计语言模型：用 N 元共现预测下一个词"
+        files: ["N_gram.py"]
+      - code: "3-2"
+        name: BPE 分词算法
+        desc: "字节对编码：子词切分如何平衡词表与序列长度"
+        files: ["BPE.py"]
+        concepts: ["Token 计量"]
+      - code: "3-3"
+        name: Word Embedding 词向量
+        desc: "词的向量表示与语义相似度"
+        files: ["Word_Embedding.py"]
+      - code: "3-4"
+        name: Transformer 架构实现
+        desc: "从注意力机制手写架构"
+        files: ["Transformer.py"]
+      - code: "3-5"
+        name: Qwen API 调用
+        desc: "调用 Qwen 系列 API，理解请求/响应结构"
+        files: ["Qwen.py"]
+        concepts: ["Token 计量"]
+
+  - chapter: 4
+    title: 智能体经典范式构建
+    doc: 第四章 智能体经典范式构建
+    icon: "📖"
+    experiments:
+      - code: "4-1"
+        name: ReAct 范式实现
+        desc: "Thought→Action→Observation 循环，推理与行动交替"
+        files: ["ReAct.py", "llm_client.py", "tools.py"]
+        concepts: ["ReAct 范式"]
+      - code: "4-2"
+        name: Plan-and-Solve 范式实现
+        desc: "先生成完整计划再逐步执行，适合多步任务"
+        files: ["Plan_and_solve.py", "llm_client.py", "tools.py"]
+        concepts: ["ReAct 范式"]
+      - code: "4-3"
+        name: Reflection 范式实现
+        desc: "对自身输出自我批评并迭代改进"
+        files: ["Reflection.py", "llm_client.py", "tools.py"]
+        concepts: ["ReAct 范式"]
+
+  - chapter: 5
+    title: 基于低代码平台的智能体搭建
+    doc: 第五章 基于低代码平台的智能体搭建
+    icon: "📖"
+    experiments:
+      - code: "5-1"
+        name: Coze 案例导入
+        desc: "导入 HelloAgent_cozeCase.zip 复现智能体"
+        files: ["HelloAgent_cozeCase.zip"]
+      - code: "5-2"
+        name: Dify 案例导入
+        desc: "导入 HelloAgent_difyCase.yml（DSL）"
+        files: ["HelloAgent_difyCase.yml"]
+      - code: "5-3"
+        name: FastGPT 案例导入
+        desc: "导入 HelloAgent_fastgptCase.json 编排"
+        files: ["HelloAgent_fastgptCase.json"]
+      - code: "5-4"
+        name: n8n 案例导入
+        desc: "导入 HelloAgent_n8nCase.json 工作流"
+        files: ["HelloAgent_n8nCase.json"]
+
+  - chapter: 6
+    title: 框架开发实践
+    doc: 第六章 框架开发实践
+    icon: "📖"
+    experiments:
+      - code: "6-1"
+        name: AgentScope 快速上手
+        desc: "结构化输出、游戏角色等多场景 Demo"
+        dir: "code/chapter6/AgentScopeDemo"
+        files: ["main_cn.py", "structured_output_cn.py", "game_roles.py", "README.md"]
+        concepts: ["多智能体协作"]
+      - code: "6-2"
+        name: AutoGen 软件团队
+        desc: "autogen_software_team：多角色协作开发软件"
+        dir: "code/chapter6/AutoGenDemo"
+        files: ["autogen_software_team.py", "output.py", "README.md"]
+        concepts: ["多智能体协作"]
+      - code: "6-3"
+        name: CAMEL 角色扮演协作
+        desc: "DigitalBookWriting：双 Agent 角色扮演完成任务"
+        dir: "code/chapter6/CAMEL"
+        files: ["DigitalBookWriting.py"]
+        concepts: ["多智能体协作"]
+      - code: "6-4"
+        name: LangGraph 对话系统
+        desc: "Dialogue_System：图结构编排对话状态机"
+        dir: "code/chapter6/Langgraph"
+        files: ["Dialogue_System.py"]
+
+  - chapter: 7
+    title: 构建你的Agent框架
+    doc: 第七章 构建你的Agent框架
+    icon: "📖"
+    experiments:
+      - code: "7-1"
+        name: LLM 客户端封装
+        desc: "统一的 LLM 调用层（多模型兼容）"
+        files: ["my_llm.py"]
+      - code: "7-2"
+        name: 最简智能体 SimpleAgent
+        desc: "最小闭环：提示 → LLM → 输出"
+        files: ["my_simple_agent.py"]
+        concepts: ["ReAct 范式"]
+      - code: "7-3"
+        name: ReAct 智能体框架化
+        desc: "把第 4 章手写 ReAct 收编为框架类"
+        files: ["my_react_agent.py"]
+        concepts: ["ReAct 范式"]
+      - code: "7-4"
+        name: 工具开发：计算器与高级搜索
+        desc: "统一 Tool 接口的两个工具实现"
+        files: ["my_calculator_tool.py", "my_advanced_search.py"]
+      - code: "7-5"
+        name: 主程序与测试验收
+        desc: "my_main 入口与 pytest 测试全家桶"
+        files: ["my_main.py", "test_simple_agent.py", "test_react_agent.py", "test_plan_solve_agent.py", "test_reflection_agent.py", "test_my_calculator.py", "test_advanced_search.py"]
+
+  - chapter: 8
+    title: 记忆与检索
+    doc: 第八章 记忆与检索
+    icon: "📖"
+    experiments:
+      - code: "8-1"
+        name: 记忆工具基础操作
+        desc: "MemoryTool 增删改查第一印象"
+        files: ["01_MemoryTool_Basic_Operations.py"]
+        concepts: ["记忆系统"]
+      - code: "8-2"
+        name: 记忆工具架构解析
+        desc: "记忆模块的分层设计"
+        files: ["02_MemoryTool_Architecture.py"]
+        concepts: ["记忆系统"]
+      - code: "8-3"
+        name: 工作记忆实现
+        desc: "上下文内的工作记忆实现"
+        files: ["03_WorkingMemory_Implementation.py"]
+        concepts: ["记忆系统"]
+      - code: "8-4"
+        name: RAG 管道：MarkItDown
+        desc: "文档解析入库管道"
+        files: ["04_RAGTool_MarkItDown_Pipeline.py"]
+        concepts: ["RAG"]
+      - code: "8-5"
+        name: RAG 高级检索
+        desc: "混合检索与重排"
+        files: ["05_RAGTool_Advanced_Search.py"]
+        concepts: ["RAG"]
+      - code: "8-6"
+        name: 记忆固化演示
+        desc: "短期记忆向长期记忆沉淀"
+        files: ["06_Memory_Consolidation_Demo.py"]
+        concepts: ["记忆系统"]
+      - code: "8-7"
+        name: RAG 智能问答
+        desc: "检索增强问答链路"
+        files: ["07_RAGTool_Intelligent_QA.py"]
+        concepts: ["RAG"]
+      - code: "8-8"
+        name: 智能体工具集成
+        desc: "记忆/RAG 作为工具接入智能体"
+        files: ["08_Agent_Tool_Integration.py"]
+        concepts: ["记忆系统", "RAG"]
+      - code: "8-9"
+        name: 记忆类型深潜
+        desc: "各类记忆的行为差异"
+        files: ["09_Memory_Types_Deep_Dive.py"]
+        concepts: ["记忆系统"]
+      - code: "8-10"
+        name: RAG 完整管道
+        desc: "端到端 RAG 全流程"
+        files: ["10_RAG_Pipeline_Complete.py"]
+        concepts: ["RAG"]
+      - code: "8-11"
+        name: 智能文档问答助手
+        desc: "本章收官：智能文档问答助手"
+        files: ["11_Q&A_Assistant.py"]
+        concepts: ["RAG", "记忆系统"]
+
+  - chapter: 9
+    title: 上下文工程
+    doc: 第九章 上下文工程
+    icon: "📖"
+    experiments:
+      - code: "9-1"
+        name: ContextBuilder 基础
+        desc: "上下文构建器的最小用法"
+        files: ["01_context_builder_basic.py"]
+      - code: "9-2"
+        name: ContextBuilder 与智能体集成
+        desc: "上下文构建接入 Agent 主循环"
+        files: ["02_context_builder_with_agent.py"]
+      - code: "9-3"
+        name: NoteTool 笔记操作
+        desc: "结构化笔记的增删改查"
+        files: ["03_note_tool_operations.py"]
+        concepts: ["记忆系统"]
+      - code: "9-4"
+        name: NoteTool 集成实战
+        desc: "NoteTool 作为外部记忆接入"
+        files: ["04_note_tool_integration.py"]
+        concepts: ["记忆系统"]
+      - code: "9-5"
+        name: TerminalTool 终端工具
+        desc: "命令执行与文件系统访问"
+        files: ["05_terminal_tool_examples.py"]
+      - code: "9-6"
+        name: 三天工作流演示
+        desc: "跨会话的长程工作流演示"
+        files: ["06_three_day_workflow.py"]
+      - code: "9-7"
+        name: 代码库维护智能体
+        desc: "本章收官：长程代码库维护助手"
+        files: ["codebase_maintainer.py", "README.md"]
+
+  - chapter: 10
+    title: 智能体通信协议
+    doc: 第十章 智能体通信协议
+    icon: "📖"
+    experiments:
+      - code: "10-1"
+        name: MCP 连接测试
+        desc: "MCP 环境连通性自检"
+        files: ["01_TestConnect.py"]
+        concepts: ["MCP"]
+      - code: "10-2"
+        name: 连接 MCP 服务器
+        desc: "连接外部 MCP Server"
+        files: ["02_Connect2MCP.py"]
+        concepts: ["MCP"]
+      - code: "10-3"
+        name: GitHub MCP 实战
+        desc: "用 GitHub MCP 操作仓库"
+        files: ["03_GitHubMCP.py"]
+        concepts: ["MCP"]
+      - code: "10-4"
+        name: MCP 传输层
+        desc: "stdio/SSE 等传输方式对比"
+        files: ["04_MCPTransport.py"]
+        concepts: ["MCP"]
+      - code: "10-5"
+        name: 智能体调用 MCP 工具
+        desc: "在 Agent 循环里调用 MCP 工具"
+        files: ["05_UseMCPToolInAgent.py"]
+        concepts: ["MCP"]
+      - code: "10-6"
+        name: 多智能体文档助手
+        desc: "多智能体 + MCP 协作文档"
+        files: ["06_MultiAgentDocumentAssist.py"]
+        concepts: ["MCP", "多智能体协作"]
+      - code: "10-7"
+        name: 简单 A2A 通信
+        desc: "A2A 最小可运行示例"
+        files: ["07_SimpleA2AAgent.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-8"
+        name: 自定义 A2A 智能体
+        desc: "编写自定义 A2A Agent"
+        files: ["08_CustomA2AAgent.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-9"
+        name: A2A 通信全家桶
+        desc: "Client/Server/Network/WithAgent 全链路"
+        files: ["09_A2A_Client.py", "09_A2A_Server.py", "09_A2A_Network.py", "09_A2A_WithAgent.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-10"
+        name: A2A 工具与多场景
+        desc: "A2A 工具化、协商与客服场景"
+        files: ["10_A2ATool_Simple.py", "10_AgentNegotiation.py", "10_CustomerService.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-11"
+        name: ANP 入门
+        desc: "ANP 协议初体验"
+        files: ["11_ANPInit.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-12"
+        name: ANP 任务分发
+        desc: "ANP 跨智能体任务分发"
+        files: ["12_ANPTaskDistribution.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-13"
+        name: ANP 负载均衡
+        desc: "ANP 多节点负载均衡"
+        files: ["13_ANPLoadBalancing.py"]
+        concepts: ["多智能体协作"]
+      - code: "10-14"
+        name: 天气 MCP 服务器实战
+        desc: "自建天气 MCP Server + Agent 调用"
+        files: ["14_weather_mcp_server.py", "14_weather_agent.py", "14_test_weather_server.py", "weather-mcp-server/"]
+        concepts: ["MCP"]
+      - code: "10-15"
+        name: 自研 MCP 服务器
+        desc: "my_mcp_server.py 自定义服务器"
+        files: ["my_mcp_server.py", "my_README.md"]
+        concepts: ["MCP"]
+
+  - chapter: 11
+    title: Agentic-RL
+    doc: 第十一章 Agentic-RL
+    icon: "📖"
+    experiments:
+      - code: "11-1"
+        name: 快速自检
+        desc: "环境/依赖/显存快速检查"
+        files: ["00_quick_test.py"]
+      - code: "11-2"
+        name: 数据集加载
+        desc: "训练数据格式与加载"
+        files: ["01_dataset_loading.py"]
+      - code: "11-3"
+        name: 奖励函数设计
+        desc: "为 GRPO 设计奖励信号"
+        files: ["02_reward_functions.py"]
+        concepts: ["LoRA 与 GRPO"]
+      - code: "11-4"
+        name: LoRA 配置
+        desc: "LoRA 秩/目标模块等配置"
+        files: ["03_lora_configuration.py"]
+        concepts: ["LoRA 与 GRPO"]
+      - code: "11-5"
+        name: SFT 训练
+        desc: "监督微调跑通"
+        files: ["04_sft_training.py"]
+        concepts: ["LoRA 与 GRPO"]
+      - code: "11-6"
+        name: GRPO 训练
+        desc: "组相对策略优化训练"
+        files: ["05_grpo_training.py"]
+        concepts: ["LoRA 与 GRPO"]
+      - code: "11-7"
+        name: 完整训练管线
+        desc: "SFT→RL 端到端流程"
+        files: ["06_complete_pipeline.py"]
+        concepts: ["LoRA 与 GRPO"]
+      - code: "11-8"
+        name: 模型评估
+        desc: "训练效果评估与分析"
+        files: ["07_model_evaluation.py"]
+      - code: "11-9"
+        name: 分布式训练
+        desc: "多卡/分布式训练要点"
+        files: ["08_distributed_training.py"]
+
+  - chapter: 12
+    title: 智能体性能评估
+    doc: 第十二章 智能体性能评估
+    icon: "📖"
+    experiments:
+      - code: "12-1"
+        name: 基础智能体示例
+        desc: "被评估对象的最小示例"
+        files: ["01_basic_agent_example.py"]
+      - code: "12-2"
+        name: BFCL 快速上手
+        desc: "Berkeley Function Calling 基准入门"
+        files: ["02_bfcl_quick_start.py"]
+      - code: "12-3"
+        name: BFCL 自定义评估
+        desc: "自定义工具集评估"
+        files: ["03_bfcl_custom_evaluation.py"]
+      - code: "12-4"
+        name: 运行 BFCL 评估
+        desc: "完整跑一次评估出分"
+        files: ["04_run_bfcl_evaluation.py"]
+      - code: "12-5"
+        name: GAIA 快速上手
+        desc: "GAIA 基准入门"
+        files: ["05_gaia_quick_start.py"]
+      - code: "12-6"
+        name: GAIA 最佳实践
+        desc: "GAIA 评估的工程要点"
+        files: ["06_gaia_best_practices.py"]
+      - code: "12-7"
+        name: 数据生成完整流程
+        desc: "评测数据生成全流程"
+        files: ["07_data_generation_complete_flow.py"]
+      - code: "12-8"
+        name: LLM Judge 评估
+        desc: "用 LLM 当裁判打分"
+        files: ["08_data_generation_llm_judge.py"]
+      - code: "12-9"
+        name: 胜率评估
+        desc: "成对比较与胜率统计"
+        files: ["09_data_generation_win_rate.py"]
+
+  - chapter: 13
+    title: 智能旅行助手
+    doc: 第十三章 智能旅行助手
+    icon: "📖"
+    projects:
+      - code: "13-1"
+        name: 智能旅行助手
+        desc: "全栈：FastAPI 后端 + Vue 前端 + 多智能体 + MCP 工具"
+        dir: "code/chapter13/helloagents-trip-planner"
+        files: ["README.md", "backend/run.py", "backend/requirements.txt", "frontend/package.json"]
+        concepts: ["MCP", "多智能体协作", "记忆系统"]
+
+  - chapter: 14
+    title: 自动化深度研究智能体
+    doc: 第十四章 自动化深度研究智能体
+    icon: "📖"
+    projects:
+      - code: "14-1"
+        name: 自动化深度研究智能体
+        desc: "全栈：uv 管理 Python 后端 + React 前端，TODO 驱动研究"
+        dir: "code/chapter14/helloagents-deepresearch"
+        files: ["backend/pyproject.toml", "frontend/package.json"]
+        concepts: ["多智能体协作", "ReAct 范式", "RAG"]
+
+  - chapter: 15
+    title: 构建赛博小镇
+    doc: 第十五章 构建赛博小镇
+    icon: "📖"
+    projects:
+      - code: "15-1"
+        name: 赛博小镇
+        desc: "全栈：Python 后端 + Godot 前端（记忆/好感度/关系系统）"
+        dir: "code/chapter15/Helloagents-AI-Town"
+        files: ["README.md", "SETUP_GUIDE.md", "backend/main.py", "helloagents-ai-town/project.godot"]
+        concepts: ["记忆系统", "多智能体协作"]

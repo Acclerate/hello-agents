@@ -1,0 +1,79 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:kb/练习拆解",
+      "color": {
+        "a": 1,
+        "rgb": 16467532
+      }
+    },
+    {
+      "query": "path:kb/实验",
+      "color": {
+        "a": 1,
+        "rgb": 10003115
+      }
+    },
+    {
+      "query": "tag:#ha/基础",
+      "color": {
+        "a": 1,
+        "rgb": 4509550
+      }
+    },
+    {
+      "query": "tag:#ha/构建",
+      "color": {
+        "a": 1,
+        "rgb": 5496797
+      }
+    },
+    {
+      "query": "tag:#ha/高级",
+      "color": {
+        "a": 1,
+        "rgb": 14724096
+      }
+    },
+    {
+      "query": "tag:#ha/综合案例",
+      "color": {
+        "a": 1,
+        "rgb": 15308607
+      }
+    },
+    {
+      "query": "tag:#ha/毕业设计",
+      "color": {
+        "a": 1,
+        "rgb": 11043583
+      }
+    },
+    {
+      "query": "tag:#ha/避坑",
+      "color": {
+        "a": 1,
+        "rgb": 16736414
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.401982897776092,
+  "close": true
+}

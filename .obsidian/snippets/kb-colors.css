@@ -1,0 +1,64 @@
+/* kb 颜色分组：五部分色系与全书知识地图 canvas 保持一致 */
+.tag[href="#ha/基础"],
+.tag[href="#flashcards/ha/基础"],
+.tag[href="#ha/%E5%9F%BA%E7%A1%80"],
+.tag[href="#flashcards/ha/%E5%9F%BA%E7%A1%80"] {
+  background-color: #44cf6e1f;
+  color: #44cf6e;
+  border: 1px solid #44cf6e55;
+}
+
+.tag[href="#ha/构建"],
+.tag[href="#flashcards/ha/构建"],
+.tag[href="#ha/%E6%9E%84%E5%BB%BA"],
+.tag[href="#flashcards/ha/%E6%9E%84%E5%BB%BA"] {
+  background-color: #53dfdd1f;
+  color: #53dfdd;
+  border: 1px solid #53dfdd55;
+}
+
+.tag[href="#ha/高级"],
+.tag[href="#flashcards/ha/高级"],
+.tag[href="#ha/%E9%AB%98%E7%BA%A7"],
+.tag[href="#flashcards/ha/%E9%AB%98%E7%BA%A7"] {
+  background-color: #e0ac001f;
+  color: #e0ac00;
+  border: 1px solid #e0ac0055;
+}
+
+.tag[href="#ha/综合案例"],
+.tag[href="#flashcards/ha/综合案例"],
+.tag[href="#ha/%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B"],
+.tag[href="#flashcards/ha/%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B"] {
+  background-color: #e9973f1f;
+  color: #e9973f;
+  border: 1px solid #e9973f55;
+}
+
+.tag[href="#ha/毕业设计"],
+.tag[href="#flashcards/ha/毕业设计"],
+.tag[href="#ha/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1"],
+.tag[href="#flashcards/ha/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1"] {
+  background-color: #a882ff1f;
+  color: #a882ff;
+  border: 1px solid #a882ff55;
+}
+
+.tag[href="#ha/避坑"],
+.tag[href="#flashcards/ha/避坑"],
+.tag[href="#ha/%E9%81%BF%E5%9D%91"],
+.tag[href="#flashcards/ha/%E9%81%BF%E5%D%91"] {
+  background-color: #ff5f9e1f;
+  color: #ff5f9e;
+  border: 1px solid #ff5f9e55;
+}
+
+/* ---- 文件列表按知识库类型着色 ---- */
+.nav-folder-title[data-path="kb/章节"], .nav-file-title[data-path^="kb/章节/"] { color: var(--color-accent); }
+.nav-folder-title[data-path="kb/概念"], .nav-file-title[data-path^="kb/概念/"] { color: var(--text-muted); }
+.nav-folder-title[data-path="kb/实验"], .nav-file-title[data-path^="kb/实验/"] { color: var(--color-base-60); }
+.nav-folder-title[data-path="kb/练习拆解"], .nav-file-title[data-path^="kb/练习拆解/"] { color: var(--color-red); }
+.nav-file-title[data-path="kb/📋 学习看板.md"],
+.nav-file-title[data-path="kb/📅 学习计划.md"],
+.nav-file-title[data-path="kb/MOC - Hello-Agents 知识体系.md"],
+.nav-file-title[data-path="kb/HOME.md"] { color: var(--color-yellow); font-weight: 600; }
