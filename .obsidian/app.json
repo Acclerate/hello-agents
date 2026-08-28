@@ -1,0 +1,25 @@
+{
+  "cssSnippets": [
+    "kb-colors"
+  ],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "kb/assets",
+  "showUnsupportedFiles": false,
+  "userIgnoreFilters": [
+    "README_EN.md",
+    "docs/README_EN.md",
+    "docs/_sidebar.md",
+    "docs/_sidebar_en.md",
+    "docs/chapter*/Chapter*.md",
+    "Co-creation-projects/",
+    ".zcode/",
+    ".github/",
+    ".vscode/",
+    "docs/images/",
+    "Extra-Chapter/images/",
+    "Additional-Chapter/N8N_INSTALL_GUIDE/",
+    "fix_bold_format.py"
+  ]
+}
